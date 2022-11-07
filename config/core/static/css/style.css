@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+.botao_apt{
+    padding: 1rem;
+    background-color: #5288da;
+    color: #ffffff;
+    box-sizing: border-box;
+    width: 100px;
+    border:none;
+    border-radius: .60rem;
+}
+
+.botao_apt:hover{
+    background-color: #1553ec;
+    transition: 0.6s;
+}
+
+h5{
+            font-size: 14px; !important;
+            color: #CCCCCC; !important;
+}
+
+.btn_custom{
+    width: 190px;
+    padding-block: 10px;
+    text-align: center;
+}
+
+.errorlist {
+    color: red !important;
+}

@@ -1,0 +1,42 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>Menu</title>
+</head>
+<body>
+<div style="text-align: center">
+    {% if user.is_authenticated %}
+        <h5>Menu</h5>
+        <div>
+            <form action="{% url 'appointment_scan' %}" method="POST" id="scan">
+                {% csrf_token %}
+                <input type="submit" class="btn btn_custom btn-danger" value="Scan">
+            </form>
+        </div>
+        <div class="mt-2">
+            <form action="{% url 'appointment_voice' %}" method="POST" id="voice">
+                {% csrf_token %}
+                <input type="submit" class="btn btn_custom btn-primary" value="Voice">
+            </form>
+        </div>
+        <div class="mt-2">
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+                {% csrf_token %}
+                <input type="submit" class="btn btn_custom btn-secondary" value="Logout">
+            </form>
+        </div>
+    {% else %}
+        <br/>
+        <a href="{% url 'login' %}" class="btn btn_custom btn-primary">Login</a>
+    {% endif %}
+</div>
+</body>
+</html>
